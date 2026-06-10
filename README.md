@@ -102,10 +102,36 @@ or run it in Google Colab.
   - max_depth = 6
   - learning_rate = 0.1
 
-## Future Improvements
+## Results
 
-- Hyperparameter tuning
-- Real-time fraud detection API
-- Model deployment using Flask/FastAPI
-- Experiment with LightGBM and CatBoost
+The XGBoost model achieved excellent performance on the test dataset despite the highly imbalanced nature of credit card fraud transactions.
+
+| Metric | Score |
+|----------|----------|
+| Accuracy | 99.95% |
+| Precision | 92.59% |
+| Recall | 76.53% |
+| F1-Score | 83.80% |
+| ROC-AUC Score | 95.65% |
+
+### Classification Report
+
+```text
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56864
+           1       0.93      0.77      0.84        98
+
+    accuracy                           1.00     56962
+   macro avg       0.96      0.88      0.92     56962
+weighted avg       1.00      1.00      1.00     56962
+```
+
+### Key Insights
+
+- Achieved **99.95% overall accuracy** on unseen transactions.
+- Obtained a **ROC-AUC score of 95.65%**, indicating excellent discrimination between fraudulent and legitimate transactions.
+- High **precision (92.59%)** means most flagged fraud transactions are truly fraudulent.
+- **Recall of 76.53%** shows the model successfully identifies a large portion of fraudulent transactions.
+- The model demonstrates strong performance for real-world fraud detection scenarios where class imbalance is a significant challenge.
 
